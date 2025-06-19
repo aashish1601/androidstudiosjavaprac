@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/relLayoutUserImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewUserImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="10dp">
+
+            //Just doing this to follow the design to be changed later.
+            //TODO: Remove the secondImageView
+
+            <ImageView
+                android:id="@+id/imgViewUser"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_background" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnSelectImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="32dp"
+            android:layout_toRightOf="@+id/cardViewUserImage"
+            android:text="Select Image" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linLayoutMidSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relLayoutUserImage"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/relLayoutUserInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:padding="16dp">
+
+            <EditText
+                android:id="@+id/edtTxtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name" />
+
+            <EditText
+                android:id="@+id/edtTxtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edtTxtName"
+                android:layout_marginTop="32dp"
+                android:hint="Email"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/edtTxtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edtTxtEmail"
+                android:layout_marginTop="32dp"
+                android:hint="Password"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/edtTxtNameRePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edtTxtPassword"
+                android:layout_marginTop="32dp"
+                android:hint="Re-Enter Password"
+                android:inputType="textPassword" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relLayoutUserAgreement"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/txtUserAgreement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="This is our licence agreement. You can share this app wherever you want. Just keep in mind to enjoy." />
+
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtUserAgreement"
+                android:text="I Agree" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relLayoutGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linLayoutMidSection"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/txtGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="Gender:"
+            android:textStyle="italic" />
+
+        <RadioGroup
+            android:id="@+id/radGrpGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtGender"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radItmMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/radItmFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:text="Female" />
+
+            <RadioButton
+                android:id="@+id/radItmOther"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:text="Other" />
+
+        </RadioGroup>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relLayoutCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relLayoutGender"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/txtCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="Country:"
+            android:textStyle="italic" />
+
+        <Spinner
+            android:id="@+id/spnrCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_toRightOf="@id/txtCountry" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relLayoutCountry"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="Register" />
+
+</RelativeLayout>
